@@ -1,0 +1,113 @@
+<%- include('partials/_header') %>
+
+<div class="container">
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-7 offset-md-3">
+      <div class="card-header">
+        Registry details
+      </div>
+      <!--FORM Shipping order-->
+      <form action="/edit/<%= registro._id %>" method="post">
+        <div class="form-group">
+        <label >Shipping order - Imported id</label>
+        <input class="form-control-plaintext" type="text" name="imported_id" 
+                placeholder="<%= registro.shipping_order.imported_id %>" 
+                value="<%= registro.shipping_order.imported_id %>">
+        </div>
+        <div class="form-group">
+          <label >Shipping order - Price</label>
+          <input class="form-control-plaintext" type="text" name="order_price" 
+                placeholder="<%= registro.shipping_order.order_price %>" 
+                value="<%= registro.shipping_order.order_price %>">
+        </div>
+        <label >Shipping order - N° Packages</label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="n_packages" 
+                placeholder="<%= registro.shipping_order.n_packages %>"
+                value="<%= registro.shipping_order.n_packages %>">
+        </div>
+        <label >Shipping order - Description</label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="content_description" 
+                placeholder="<%= registro.shipping_order.content_description %>"
+                value="<%= registro.shipping_order.content_description %>">
+        </div>
+        <label >Shipping order - Type</label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="type" 
+                placeholder="<%= registro.shipping_order.type %>"
+                value="<%= registro.shipping_order.type %>">
+        </div>
+        <label >Shipping order - Weight</label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="weight" 
+                placeholder="<%= registro.shipping_order.weight %>"
+                value="<%= registro.shipping_order.weight %>">
+        </div>
+        <label >Shipping order - Volume</label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="volume" 
+                placeholder="<%= registro.shipping_order.volume %>"
+                value="<%= registro.shipping_order.volume %>">
+        </div>
+        <!--FORM Shipping destination-->
+        <label >Shipping destination - Customer - Name </label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="name" 
+                placeholder="<%= registro.shipping_destination.customer.name %>"
+                value="<%= registro.shipping_destination.customer.name %>">
+          </div>
+        <label >Shipping destination - Customer - Phone </label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="phone" 
+                placeholder="<%= registro.shipping_destination.customer.phone %>"
+                value="<%= registro.shipping_destination.customer.phone %>">
+        </div>
+        <label >Shipping destination - Customer - Email </label>
+        <div class="form-group">
+                <input class="form-control-plaintext" type="text" name="email" 
+                  placeholder="<%= registro.shipping_destination.customer.email %>"
+                  value="<%= registro.shipping_destination.customer.email %>">
+        </div>
+        <label >Shipping destination - Delivery address - Home address - Place</label>
+        <div class="form-group">
+                <input class="form-control-plaintext" type="text" name="place" 
+                  placeholder="<%= registro.shipping_destination.delivery_address.home_address.place %>"
+                  value="<%= registro.shipping_destination.delivery_address.home_address.place %>">
+        </div>
+        <label >Shipping destination - Delivery address - Home address - Full address</label>
+        <div class="form-group">
+                <input class="form-control-plaintext" type="text" name="full_address" 
+                  placeholder="<%= registro.shipping_destination.delivery_address.home_address.full_address %>"
+                  value="<%= registro.shipping_destination.delivery_address.home_address.full_address %>">
+        </div>
+        <!--FORM Shipping origin-->
+        <label >Shipping origin - Warehouse code</label>
+        <div class="form-group">
+                <input class="form-control-plaintext" type="text" name="warehouse_code" 
+                  placeholder="<%= registro.shipping_origin.warehouse_code %>"
+                  value="<%= registro.shipping_origin.warehouse_code %>">
+        </div>
+        <!--FORM Carrier-->
+        <label >Carrier origin - Carrier code</label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="carrier_code" 
+            placeholder="<%= registro.carrier.carrier_code %>"
+            value="<%= registro.carrier.carrier_code %>">
+        </div>
+        <label >Carrier - Tracking number</label>
+        <div class="form-group">
+          <input class="form-control-plaintext" type="text" name="tracking_number" 
+            placeholder="<%= registro.carrier.tracking_number %>"
+            value="<%= registro.carrier.tracking_number %>">
+        </div>
+        <a href="/" 
+        class="btn btn-info">
+        Home
+      </a>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/_footer') %>

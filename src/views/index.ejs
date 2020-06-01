@@ -1,0 +1,47 @@
+<%- include('partials/_header') %>
+<div class="container">
+  <div class="row">
+    <!-- LIST -->
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Importer Id</th>
+            <th>Order Price</th>
+            <th>Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < registros.length; i++) { %>
+                <tr>
+                  <td><%= i + 1%></td>
+                  <td><strong><%= registros[i].shipping_order.imported_id %></strong></td>
+                  <td><%= registros[i].shipping_order.order_price %></td>
+                  <td>
+                    <a href="/delete/<%= registros[i]._id %>"
+                      class="btn btn-danger">
+                      Delete
+                    </a>
+                    <a href="/edit/<%= registros[i]._id %>" 
+                      class="btn btn-info">
+                      Edit
+                    </a>
+                    <a href="/details/<%= registros[i]._id %>" 
+                      class="btn btn-info">
+                      Details
+                    </a>
+                  </td>
+                </tr>
+              <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-7">
+      <a href="/dbfake" 
+        class="btn btn-info">
+        Data Fake
+      </a>
+    </div>
+  </div>
+</div>
